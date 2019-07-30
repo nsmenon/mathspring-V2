@@ -292,7 +292,7 @@ function getNextHint(hintLabel){
 		hintText = "Hint";
 	}
 	else {
-		hintText = "Trabajemos Juntos";
+		hintText = "Ayuda";
 	}
 
     var hintId = m.getIdCorrespondingToHint(hintLabel);
