@@ -75,15 +75,26 @@ public class AskEmotionRadioIntervention extends InputResponseIntervention imple
         try {           	
         		// Multi=lingual enhancement
         		rb = ResourceBundle.getBundle("MathSpring",this.locale);
-
-        		str = "<div>  " + getFormOpen() + " <p>" + rb.getString("ask_emotion_radio_header") + "<br>" + rb.getString("ask_emotion_radio_question") + emotion.getName() + ".";
+        		
+        		String strEmotion = emotion.getName();       		
+        		String strEmotionLower = strEmotion.toLowerCase(this.locale);
+        		
+        		String strEmo = ""; 
+        		try {
+        			strEmo = rb.getString(strEmotionLower);
+        		}
+        		catch(Exception e) {
+        			strEmo = emotion.getName();
+        		}
+        		
+        		str = "<div>  " + getFormOpen() + " <p>" + rb.getString("ask_emotion_radio_header") + "<br>" + rb.getString("ask_emotion_radio_question") + strEmo + ".";
 
         		str += "<input type=\"hidden\" name=\"" + EMOTION + "\" value=\"" + emotion.getName() + "\"><br>";
         		for (int i =0;i<emotion.getLabels().size();i++)
         			str += "<input name=\"" + LEVEL + "\" type=\"radio\" value=\"" + emotion.getVals().get(i) + "\">" + emotion.getLabels().get(i) + "</input><br>";
         		str += "<br>";
         		if (askWhy) {
-        			str += "Why is that?<br>";
+       				str += rb.getString("why_is_that") + "<br>";
         			str += "<textarea name=\"" + REASON + "\" rows=\"2\" cols=\"50\"/>";
         		}
         		str+= "</p>";

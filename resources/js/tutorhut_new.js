@@ -192,7 +192,7 @@ function displayHintCount () {
 		hintText = "Hint";
 	}
 	else {
-		hintText = "Trabajemos Juntos";
+		hintText = "Ayuda";
 	}
 
     if (globals.numHints >= 0 && globals.numHintsSeen == 0) {
