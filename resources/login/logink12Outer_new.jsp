@@ -60,7 +60,6 @@ catch (Exception e) {
         <h1 class="additional-form__header"><%= rb.getString("thank_you_for_using_ms")%></h1>
         <p class="additional-form__paragraph"><%= rb.getString("please_answer_some_questions")%></p>
         <hr>
-        <h2>${innerjsp}</h2>
         <jsp:include page="${innerjsp}" />
     </div>
 </div>

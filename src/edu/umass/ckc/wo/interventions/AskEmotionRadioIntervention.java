@@ -17,12 +17,6 @@ public class AskEmotionRadioIntervention extends InputResponseIntervention imple
     private boolean askWhy=false;
     private boolean askAboutSkipping=false;
     private boolean skippedProblem=false;
-    // the default question this thing asks has an emotion plugged into the string
-    //private String question = "Based on the last few problems tell us about your level of %s in solving math problems.";
-    //private String questionHeader = "Please tell us how you are feeling.";
-
-    private String question = "";
-    private String questionHeader = "";
 
     public static final String LEVEL = "level" ;
     public static final String EMOTION = "emotion" ;
@@ -100,7 +94,7 @@ public class AskEmotionRadioIntervention extends InputResponseIntervention imple
         		str+= "</p>";
         		if (askAboutSkipping && skippedProblem) {
         			str += "<br>";
-        			str += "Have you skipped a problem recently (clicked on 'new problem' without answering)?<br>";
+        			str += rb.getString("have_you_skipped") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='never'>" + rb.getString("never") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='fewTimes'>" + rb.getString("a_few_times") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='aLot'>" + rb.getString("a_lot") + "<br>";
