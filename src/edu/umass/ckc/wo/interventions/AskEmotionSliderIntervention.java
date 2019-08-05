@@ -112,7 +112,7 @@ public class AskEmotionSliderIntervention extends InputResponseIntervention impl
        			}
         		if (askAboutSkipping && skippedProblem) {
         			str += "<br>";
-        			str += "Have you skipped a problem recently (clicked on 'new problem' without answering)?<br>";
+        			str += rb.getString("have_you_skipped") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='never'>" + rb.getString("never") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='fewTimes'>" + rb.getString("a_few_times") + "<br>";
         			str += "<input type='radio' name='skipFrequency' value='aLot'>" + rb.getString("a_lot") + "<br>";

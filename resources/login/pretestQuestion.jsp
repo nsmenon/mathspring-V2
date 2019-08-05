@@ -88,13 +88,13 @@ catch (Exception e) {
                 return;
         if (isMultiChoice) {
             setIDontKnowControls(true, 'inline');
-            var msg1 = <%= rb.getString("taking_a_while_added_choice")%>;
-            alert(msg1));
+            var msg1 = "<%= rb.getString("taking_a_while_added_choice")%>";
+            alert(msg1);
         }
         else {
             // expose a button that allows the user to select 'I don't know'
             setIDontKnowControls(false, 'inline');
-            var msg2 = <%= rb.getString("taking_a_while_added_button")%>;
+            var msg2 = "<%= rb.getString("taking_a_while_added_button")%>";
             alert(msg2);
         }
     }
@@ -102,7 +102,7 @@ catch (Exception e) {
     // when the user clicks the I don't know button, it autofills the input box and submits the form.
     function submitIDontKnow () {
         // put text in the input box so that it will be valid on submission
-        var msg3 = <%= rb.getString("i_dont_know")%> + ".";
+        var msg3 = "<%= rb.getString("i_dont_know")%>" + ".";
         document.getElementById("f").value = msg3;
         // now submit the form
         document.getElementById("pretestQuestion").submit();
@@ -122,7 +122,8 @@ catch (Exception e) {
             v = a || b || c || d || e || idontknow;
 
             if (!v) {
-                alert("Please select one of the answers!");
+            	var msg4 = "<%= rb.getString("please_select_one_answer")%>";
+            	alert(msg4);
             }
         }
         else {
@@ -130,7 +131,8 @@ catch (Exception e) {
             var input = document.getElementById("f").value.trim();
             if(input == "")
             {
-                alert('Please answer the question!');
+            	var msg5 = "<%= rb.getString("please_answer_question")%>";
+            	alert(msg5);
                 document.getElementById("f").focus();
                 v = false
             }
